@@ -27,15 +27,7 @@ export default class Lista extends Component {
 			listaReceitas:[]
 				
 		};
-		const config = {
-			apiKey: "AIzaSyADvfIUt_5liJ9qbosi_DAhXMQisNdZvI0",
-			authDomain: "mercadodev-e4369.firebaseapp.com",
-			databaseURL: "https://mercadodev-e4369.firebaseio.com",
-			projectId: "mercadodev-e4369",
-			storageBucket: "mercadodev-e4369.appspot.com",
-			messagingSenderId: "1009979116282"
-		  };
-		  firebase.initializeApp(config);  
+		
 
 		  firebase.database().ref('receitas').once('value', (snapshot)=>{
 			let state = this.state;
