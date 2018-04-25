@@ -1,5 +1,14 @@
+console.ignoredYellowBox = [
+    'Setting a timer'
+];
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { ScrollView, Text, StyleSheet, FlatList } from 'react-native';
+import {
+    AdMobBanner,
+    AdMobInterstitial,
+    PublisherBanner,
+    AdMobRewarded
+  } from 'expo';
 
 export default class ReceitaModo extends Component {
 
@@ -8,23 +17,27 @@ export default class ReceitaModo extends Component {
     }
     render(){
         return(
-            <View>
-                <FlatList
-                    data={this.props.screenProps.modo}
-                    renderItem={({item})=> <Text style={styles.ingItem}>- Passo {item.key}: {item.txt} </Text> }
-                    keyExtractor={(item, index)=> item.key}
-                />
-            </View>
+            <ScrollView style={styles.ingItem}>
+                <Text style={styles.modo} key={this.modo} >{this.props.screenProps.modo}</Text>
+                <AdMobBanner
+                    bannerSize="fullBanner"
+                    adUnitID="ca-app-pub-5537548119879720/8295976662" // Test ID, Replace with your-admob-unit-id
+                    testDeviceID="EMULATOR"
+                    onDidFailToReceiveAdWithError={this.bannerError} />
+            </ScrollView>
         );
     }
 }
 
 const styles = StyleSheet.create({
     ingItem:{
-        fontSize:18,
         marginBottom:10,
         marginTop:10,
         marginLeft:10,
         marginRight:10,
+    },
+    modo:{
+        fontSize:20,
+        marginBottom:10,
     }
 });

@@ -3,6 +3,9 @@
     "name": "receitando",
     "description": "A very interesting project.",
     "slug": "receitando",
+    "android":{
+      "package":"br.com.spartawebti.receitando"
+    },
     "privacy": "public",
     "sdkVersion": "26.0.0",
     "platforms": ["ios", "android"],

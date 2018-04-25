@@ -1,3 +1,6 @@
+console.ignoredYellowBox = [
+    'Setting a timer'
+];
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet, TouchableHighlight } from 'react-native';
 
@@ -16,7 +19,7 @@ export default class ReceitaItem extends Component {
                     <View style={styles.info} >
                         <Text style={styles.nomeReceita} >{this.props.data.nome} </Text>
                     </View>
-                    <Image source={{uri:this.props.data.imagem}} style={styles.imagem} />
+                    <Image source={{uri:this.props.data.link}} style={styles.imagem} />
                 </View>
             </TouchableHighlight>
         );
